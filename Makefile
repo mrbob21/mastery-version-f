@@ -31,7 +31,7 @@ debug: $(EXEC)
 # Checks all outputs for all test cases
 check: $(EXEC)
 	@for testfile in testcases/*; do \
-		echo "Running $$testfile..."; \
+		echo "\nRunning $$testfile..."; \
 		./$(EXEC) -t $$testfile; \
 	done
 
@@ -49,6 +49,7 @@ comp: $(EXEC)
 			echo "Diff:"; \
 			diff $(OUTPUT_DIR)/$$base_name.out $(OUTPUT_DIR)/$$base_name.ref; \
 		fi; \
+		echo "\n"; \
 	done
 
 

@@ -1,0 +1,266 @@
+==1113704== Memcheck, a memory error detector
+==1113704== Copyright (C) 2002-2024, and GNU GPL'd, by Julian Seward et al.
+==1113704== Using Valgrind-3.24.0-fcdaa47426-20241101 and LibVEX; rerun with -h for copyright info
+==1113704== Command: bin/a.out -t testcases/short1.rep
+==1113704== Parent PID: 1111372
+==1113704== 
+--1113704-- 
+--1113704-- Valgrind options:
+--1113704--    --leak-check=full
+--1113704--    --show-leak-kinds=all
+--1113704--    --track-origins=yes
+--1113704--    --verbose
+--1113704--    --log-file=valgrind-out.txt
+--1113704-- Contents of /proc/version:
+--1113704--   Linux version 5.15.0-134-generic (buildd@lcy02-amd64-092) (gcc (Ubuntu 9.4.0-1ubuntu1~20.04.2) 9.4.0, GNU ld (GNU Binutils for Ubuntu) 2.34) #145~20.04.1-Ubuntu SMP Mon Feb 17 13:27:16 UTC 2025
+--1113704-- 
+--1113704-- Arch and hwcaps: AMD64, LittleEndian, amd64-cx16-lzcnt-rdtscp-sse3-ssse3-avx-avx2-bmi-f16c-rdrand-rdseed-fma
+--1113704-- Page sizes: currently 4096, max supported 4096
+--1113704-- Valgrind library directory: /lusr/opt/valgrind-3.24/libexec/valgrind
+--1113704-- Reading syms from /u/eamat/mastery-practice/mastery-version-f/bin/a.out
+--1113704-- Reading syms from /usr/lib/x86_64-linux-gnu/ld-2.31.so
+--1113704--   Considering /usr/lib/debug/.build-id/cb/904567e1b2a460b6fc20817776ad590d265686.debug ..
+--1113704--   .. build-id is valid
+--1113704-- Reading syms from /lusr/opt/valgrind-3.24/libexec/valgrind/memcheck-amd64-linux
+--1113704--    object doesn't have a dynamic symbol table
+--1113704-- Scheduler: using generic scheduler lock implementation.
+--1113704-- Reading suppressions file: /lusr/opt/valgrind-3.24/libexec/valgrind/default.supp
+==1113704== embedded gdbserver: reading from /tmp/vgdb-pipe-from-vgdb-to-1113704-by-eamat-on-???
+==1113704== embedded gdbserver: writing to   /tmp/vgdb-pipe-to-vgdb-from-1113704-by-eamat-on-???
+==1113704== embedded gdbserver: shared mem   /tmp/vgdb-pipe-shared-mem-vgdb-1113704-by-eamat-on-???
+==1113704== 
+==1113704== TO CONTROL THIS PROCESS USING vgdb (which you probably
+==1113704== don't want to do, unless you know exactly what you're doing,
+==1113704== or are doing some strange experiment):
+==1113704==   /lusr/opt/valgrind-3.24/libexec/valgrind/../../bin/vgdb --pid=1113704 ...command...
+==1113704== 
+==1113704== TO DEBUG THIS PROCESS USING GDB: start GDB like this
+==1113704==   /path/to/gdb bin/a.out
+==1113704== and then give GDB the following command
+==1113704==   target remote | /lusr/opt/valgrind-3.24/libexec/valgrind/../../bin/vgdb --pid=1113704
+==1113704== --pid is optional if only one valgrind process is running
+==1113704== 
+--1113704-- REDIR: 0x4022e20 (ld-linux-x86-64.so.2:strlen) redirected to 0x580d3392 (vgPlain_amd64_linux_REDIR_FOR_strlen)
+--1113704-- REDIR: 0x401f600 (ld-linux-x86-64.so.2:strcmp) redirected to 0x580d33ac (vgPlain_amd64_linux_REDIR_FOR_strcmp)
+--1113704-- REDIR: 0x4022bf0 (ld-linux-x86-64.so.2:index) redirected to 0x580d33c7 (vgPlain_amd64_linux_REDIR_FOR_index)
+--1113704-- Reading syms from /lusr/opt/valgrind-3.24/libexec/valgrind/vgpreload_core-amd64-linux.so
+--1113704-- Reading syms from /lusr/opt/valgrind-3.24/libexec/valgrind/vgpreload_memcheck-amd64-linux.so
+==1113704== WARNING: new redirection conflicts with existing -- ignoring it
+--1113704--     old: 0x0401f600 (strcmp              ) R-> (0000.0) 0x580d33ac vgPlain_amd64_linux_REDIR_FOR_strcmp
+--1113704--     new: 0x0401f600 (strcmp              ) R-> (2016.0) 0x04847340 strcmp
+==1113704== WARNING: new redirection conflicts with existing -- ignoring it
+--1113704--     old: 0x04022e20 (strlen              ) R-> (0000.0) 0x580d3392 vgPlain_amd64_linux_REDIR_FOR_strlen
+--1113704--     new: 0x04022e20 (strlen              ) R-> (2007.0) 0x048461c0 strlen
+--1113704-- REDIR: 0x4023380 (ld-linux-x86-64.so.2:mempcpy) redirected to 0x484af40 (mempcpy)
+--1113704-- Reading syms from /usr/lib/x86_64-linux-gnu/libc-2.31.so
+--1113704--   Considering /usr/lib/debug/.build-id/03/23ab4806bee6f846d9ad4bccfc29afdca49a58.debug ..
+--1113704--   .. build-id is valid
+==1113704== WARNING: new redirection conflicts with existing -- ignoring it
+--1113704--     old: 0x0491f250 (memalign            ) R-> (1011.0) 0x048449fa memalign
+--1113704--     new: 0x0491f250 (memalign            ) R-> (1017.0) 0x04845295 aligned_alloc
+==1113704== WARNING: new redirection conflicts with existing -- ignoring it
+--1113704--     old: 0x0491f250 (memalign            ) R-> (1011.0) 0x048449fa memalign
+--1113704--     new: 0x0491f250 (memalign            ) R-> (1017.0) 0x04845115 aligned_alloc
+==1113704== WARNING: new redirection conflicts with existing -- ignoring it
+--1113704--     old: 0x0491f250 (memalign            ) R-> (1011.0) 0x048449fa memalign
+--1113704--     new: 0x0491f250 (memalign            ) R-> (1017.0) 0x04845295 aligned_alloc
+==1113704== WARNING: new redirection conflicts with existing -- ignoring it
+--1113704--     old: 0x0491f250 (memalign            ) R-> (1011.0) 0x048449fa memalign
+--1113704--     new: 0x0491f250 (memalign            ) R-> (1017.0) 0x04845115 aligned_alloc
+--1113704-- REDIR: 0x4924480 (libc.so.6:memmove) redirected to 0x48311bb (_vgnU_ifunc_wrapper)
+==1113704== Preferring higher priority redirection:
+--1113704--     old: 0x04a0f910 (__memcpy_avx_unalign) R-> (2018.0) 0x048485f0 __memcpy_avx_unaligned_erms
+--1113704--     new: 0x04a0f910 (__memcpy_avx_unalign) R-> (2018.1) 0x04849f10 memmove
+--1113704-- REDIR: 0x4923780 (libc.so.6:strncpy) redirected to 0x48311bb (_vgnU_ifunc_wrapper)
+--1113704-- REDIR: 0x49247b0 (libc.so.6:strcasecmp) redirected to 0x48311bb (_vgnU_ifunc_wrapper)
+--1113704-- REDIR: 0x49230a0 (libc.so.6:strcat) redirected to 0x48311bb (_vgnU_ifunc_wrapper)
+--1113704-- REDIR: 0x49237e0 (libc.so.6:rindex) redirected to 0x48311bb (_vgnU_ifunc_wrapper)
+--1113704-- REDIR: 0x4925c50 (libc.so.6:rawmemchr) redirected to 0x48311bb (_vgnU_ifunc_wrapper)
+--1113704-- REDIR: 0x4940ce0 (libc.so.6:wmemchr) redirected to 0x48311bb (_vgnU_ifunc_wrapper)
+--1113704-- REDIR: 0x4940820 (libc.so.6:wcscmp) redirected to 0x48311bb (_vgnU_ifunc_wrapper)
+--1113704-- REDIR: 0x49245e0 (libc.so.6:mempcpy) redirected to 0x48311bb (_vgnU_ifunc_wrapper)
+--1113704-- REDIR: 0x4924410 (libc.so.6:bcmp) redirected to 0x48311bb (_vgnU_ifunc_wrapper)
+--1113704-- REDIR: 0x4923710 (libc.so.6:strncmp) redirected to 0x48311bb (_vgnU_ifunc_wrapper)
+--1113704-- REDIR: 0x4923150 (libc.so.6:strcmp) redirected to 0x48311bb (_vgnU_ifunc_wrapper)
+--1113704-- REDIR: 0x4924540 (libc.so.6:memset) redirected to 0x48311bb (_vgnU_ifunc_wrapper)
+--1113704-- REDIR: 0x49407e0 (libc.so.6:wcschr) redirected to 0x48311bb (_vgnU_ifunc_wrapper)
+--1113704-- REDIR: 0x4923670 (libc.so.6:strnlen) redirected to 0x48311bb (_vgnU_ifunc_wrapper)
+--1113704-- REDIR: 0x4923230 (libc.so.6:strcspn) redirected to 0x48311bb (_vgnU_ifunc_wrapper)
+--1113704-- REDIR: 0x4924800 (libc.so.6:strncasecmp) redirected to 0x48311bb (_vgnU_ifunc_wrapper)
+--1113704-- REDIR: 0x49231d0 (libc.so.6:strcpy) redirected to 0x48311bb (_vgnU_ifunc_wrapper)
+--1113704-- REDIR: 0x4924950 (libc.so.6:memcpy@@GLIBC_2.14) redirected to 0x48311bb (_vgnU_ifunc_wrapper)
+--1113704-- REDIR: 0x4941f50 (libc.so.6:wcsnlen) redirected to 0x48311bb (_vgnU_ifunc_wrapper)
+--1113704-- REDIR: 0x4940860 (libc.so.6:wcscpy) redirected to 0x48311bb (_vgnU_ifunc_wrapper)
+--1113704-- REDIR: 0x4923820 (libc.so.6:strpbrk) redirected to 0x48311bb (_vgnU_ifunc_wrapper)
+--1113704-- REDIR: 0x4923100 (libc.so.6:index) redirected to 0x48311bb (_vgnU_ifunc_wrapper)
+--1113704-- REDIR: 0x4923630 (libc.so.6:strlen) redirected to 0x48311bb (_vgnU_ifunc_wrapper)
+--1113704-- REDIR: 0x492cbb0 (libc.so.6:memrchr) redirected to 0x48311bb (_vgnU_ifunc_wrapper)
+--1113704-- REDIR: 0x4924850 (libc.so.6:strcasecmp_l) redirected to 0x48311bb (_vgnU_ifunc_wrapper)
+--1113704-- REDIR: 0x49243d0 (libc.so.6:memchr) redirected to 0x48311bb (_vgnU_ifunc_wrapper)
+--1113704-- REDIR: 0x4940930 (libc.so.6:wcslen) redirected to 0x48311bb (_vgnU_ifunc_wrapper)
+--1113704-- REDIR: 0x4923ae0 (libc.so.6:strspn) redirected to 0x48311bb (_vgnU_ifunc_wrapper)
+--1113704-- REDIR: 0x4924750 (libc.so.6:stpncpy) redirected to 0x48311bb (_vgnU_ifunc_wrapper)
+--1113704-- REDIR: 0x49246f0 (libc.so.6:stpcpy) redirected to 0x48311bb (_vgnU_ifunc_wrapper)
+--1113704-- REDIR: 0x4940d20 (libc.so.6:wmemcmp) redirected to 0x48311bb (_vgnU_ifunc_wrapper)
+--1113704-- REDIR: 0x4925c90 (libc.so.6:strchrnul) redirected to 0x48311bb (_vgnU_ifunc_wrapper)
+--1113704-- REDIR: 0x49248a0 (libc.so.6:strncasecmp_l) redirected to 0x48311bb (_vgnU_ifunc_wrapper)
+--1113704-- REDIR: 0x4a0c730 (libc.so.6:__strrchr_avx2) redirected to 0x4845a10 (rindex)
+--1113704-- REDIR: 0x4a0c900 (libc.so.6:__strlen_avx2) redirected to 0x48460a0 (strlen)
+--1113704-- REDIR: 0x4a0c310 (libc.so.6:__strchr_avx2) redirected to 0x4845bf0 (index)
+--1113704-- REDIR: 0x491e0e0 (libc.so.6:malloc) redirected to 0x483c79f (malloc)
+--1113704-- REDIR: 0x4923fa0 (libc.so.6:__GI_strstr) redirected to 0x484b130 (__strstr_sse2)
+--1113704-- REDIR: 0x4a08760 (libc.so.6:__memchr_avx2) redirected to 0x48473c0 (memchr)
+--1113704-- REDIR: 0x4a0f910 (libc.so.6:__memcpy_avx_unaligned_erms) redirected to 0x4849f10 (memmove)
+--1113704-- REDIR: 0x4a07cc0 (libc.so.6:__strspn_sse42) redirected to 0x484b380 (strspn)
+--1113704-- REDIR: 0x4a07a40 (libc.so.6:__strcspn_sse42) redirected to 0x484b2a0 (strcspn)
+--1113704-- REDIR: 0x491e6d0 (libc.so.6:free) redirected to 0x483fae9 (free)
+==1113704== Invalid read of size 8
+==1113704==    at 0x109865: print_and_free_list (grind.c:71)
+==1113704==    by 0x1097F9: print_grinder (grind.c:58)
+==1113704==    by 0x1093AA: main (main.c:33)
+==1113704==  Address 0x4a7b2b0 is 16 bytes inside a block of size 24 free'd
+==1113704==    at 0x483FB5B: free (vg_replace_malloc.c:989)
+==1113704==    by 0x109918: free_grind_elem (grind.c:84)
+==1113704==    by 0x109756: grind (grind.c:39)
+==1113704==    by 0x10938B: main (main.c:29)
+==1113704==  Block was alloc'd at
+==1113704==    at 0x483C815: malloc (vg_replace_malloc.c:446)
+==1113704==    by 0x109664: grind (grind.c:22)
+==1113704==    by 0x10938B: main (main.c:29)
+==1113704== 
+==1113704== Invalid read of size 4
+==1113704==    at 0x109871: print_and_free_list (grind.c:72)
+==1113704==    by 0x1097F9: print_grinder (grind.c:58)
+==1113704==    by 0x1093AA: main (main.c:33)
+==1113704==  Address 0x4a7b2a0 is 0 bytes inside a block of size 24 free'd
+==1113704==    at 0x483FB5B: free (vg_replace_malloc.c:989)
+==1113704==    by 0x109918: free_grind_elem (grind.c:84)
+==1113704==    by 0x109756: grind (grind.c:39)
+==1113704==    by 0x10938B: main (main.c:29)
+==1113704==  Block was alloc'd at
+==1113704==    at 0x483C815: malloc (vg_replace_malloc.c:446)
+==1113704==    by 0x109664: grind (grind.c:22)
+==1113704==    by 0x10938B: main (main.c:29)
+==1113704== 
+==1113704== Invalid read of size 8
+==1113704==    at 0x109877: print_and_free_list (grind.c:72)
+==1113704==    by 0x1097F9: print_grinder (grind.c:58)
+==1113704==    by 0x1093AA: main (main.c:33)
+==1113704==  Address 0x4a7b2a8 is 8 bytes inside a block of size 24 free'd
+==1113704==    at 0x483FB5B: free (vg_replace_malloc.c:989)
+==1113704==    by 0x109918: free_grind_elem (grind.c:84)
+==1113704==    by 0x109756: grind (grind.c:39)
+==1113704==    by 0x10938B: main (main.c:29)
+==1113704==  Block was alloc'd at
+==1113704==    at 0x483C815: malloc (vg_replace_malloc.c:446)
+==1113704==    by 0x109664: grind (grind.c:22)
+==1113704==    by 0x10938B: main (main.c:29)
+==1113704== 
+--1113704-- REDIR: 0x4a0c540 (libc.so.6:__strchrnul_avx2) redirected to 0x484aa60 (strchrnul)
+--1113704-- REDIR: 0x4a0f8f0 (libc.so.6:__mempcpy_avx_unaligned_erms) redirected to 0x484ab80 (mempcpy)
+==1113704== Invalid free() / delete / delete[] / realloc()
+==1113704==    at 0x483FB5B: free (vg_replace_malloc.c:989)
+==1113704==    by 0x109918: free_grind_elem (grind.c:84)
+==1113704==    by 0x10989A: print_and_free_list (grind.c:73)
+==1113704==    by 0x1097F9: print_grinder (grind.c:58)
+==1113704==    by 0x1093AA: main (main.c:33)
+==1113704==  Address 0x4a7b2a0 is 0 bytes inside a block of size 24 free'd
+==1113704==    at 0x483FB5B: free (vg_replace_malloc.c:989)
+==1113704==    by 0x109918: free_grind_elem (grind.c:84)
+==1113704==    by 0x109756: grind (grind.c:39)
+==1113704==    by 0x10938B: main (main.c:29)
+==1113704==  Block was alloc'd at
+==1113704==    at 0x483C815: malloc (vg_replace_malloc.c:446)
+==1113704==    by 0x109664: grind (grind.c:22)
+==1113704==    by 0x10938B: main (main.c:29)
+==1113704== 
+==1113704== 
+==1113704== HEAP SUMMARY:
+==1113704==     in use at exit: 472 bytes in 1 blocks
+==1113704==   total heap usage: 9 allocs, 14 frees, 9,832 bytes allocated
+==1113704== 
+==1113704== Searching for pointers to 1 not-freed blocks
+==1113704== Checked 68,904 bytes
+==1113704== 
+==1113704== 472 bytes in 1 blocks are still reachable in loss record 1 of 1
+==1113704==    at 0x483C815: malloc (vg_replace_malloc.c:446)
+==1113704==    by 0x490692D: __fopen_internal (iofopen.c:65)
+==1113704==    by 0x490692D: fopen@@GLIBC_2.2.5 (iofopen.c:86)
+==1113704==    by 0x1093EC: init_parser (parser.c:5)
+==1113704==    by 0x10937F: main (main.c:28)
+==1113704== 
+==1113704== LEAK SUMMARY:
+==1113704==    definitely lost: 0 bytes in 0 blocks
+==1113704==    indirectly lost: 0 bytes in 0 blocks
+==1113704==      possibly lost: 0 bytes in 0 blocks
+==1113704==    still reachable: 472 bytes in 1 blocks
+==1113704==         suppressed: 0 bytes in 0 blocks
+==1113704== 
+==1113704== ERROR SUMMARY: 24 errors from 4 contexts (suppressed: 0 from 0)
+==1113704== 
+==1113704== 6 errors in context 1 of 4:
+==1113704== Invalid free() / delete / delete[] / realloc()
+==1113704==    at 0x483FB5B: free (vg_replace_malloc.c:989)
+==1113704==    by 0x109918: free_grind_elem (grind.c:84)
+==1113704==    by 0x10989A: print_and_free_list (grind.c:73)
+==1113704==    by 0x1097F9: print_grinder (grind.c:58)
+==1113704==    by 0x1093AA: main (main.c:33)
+==1113704==  Address 0x4a7b2a0 is 0 bytes inside a block of size 24 free'd
+==1113704==    at 0x483FB5B: free (vg_replace_malloc.c:989)
+==1113704==    by 0x109918: free_grind_elem (grind.c:84)
+==1113704==    by 0x109756: grind (grind.c:39)
+==1113704==    by 0x10938B: main (main.c:29)
+==1113704==  Block was alloc'd at
+==1113704==    at 0x483C815: malloc (vg_replace_malloc.c:446)
+==1113704==    by 0x109664: grind (grind.c:22)
+==1113704==    by 0x10938B: main (main.c:29)
+==1113704== 
+==1113704== 
+==1113704== 6 errors in context 2 of 4:
+==1113704== Invalid read of size 8
+==1113704==    at 0x109877: print_and_free_list (grind.c:72)
+==1113704==    by 0x1097F9: print_grinder (grind.c:58)
+==1113704==    by 0x1093AA: main (main.c:33)
+==1113704==  Address 0x4a7b2a8 is 8 bytes inside a block of size 24 free'd
+==1113704==    at 0x483FB5B: free (vg_replace_malloc.c:989)
+==1113704==    by 0x109918: free_grind_elem (grind.c:84)
+==1113704==    by 0x109756: grind (grind.c:39)
+==1113704==    by 0x10938B: main (main.c:29)
+==1113704==  Block was alloc'd at
+==1113704==    at 0x483C815: malloc (vg_replace_malloc.c:446)
+==1113704==    by 0x109664: grind (grind.c:22)
+==1113704==    by 0x10938B: main (main.c:29)
+==1113704== 
+==1113704== 
+==1113704== 6 errors in context 3 of 4:
+==1113704== Invalid read of size 4
+==1113704==    at 0x109871: print_and_free_list (grind.c:72)
+==1113704==    by 0x1097F9: print_grinder (grind.c:58)
+==1113704==    by 0x1093AA: main (main.c:33)
+==1113704==  Address 0x4a7b2a0 is 0 bytes inside a block of size 24 free'd
+==1113704==    at 0x483FB5B: free (vg_replace_malloc.c:989)
+==1113704==    by 0x109918: free_grind_elem (grind.c:84)
+==1113704==    by 0x109756: grind (grind.c:39)
+==1113704==    by 0x10938B: main (main.c:29)
+==1113704==  Block was alloc'd at
+==1113704==    at 0x483C815: malloc (vg_replace_malloc.c:446)
+==1113704==    by 0x109664: grind (grind.c:22)
+==1113704==    by 0x10938B: main (main.c:29)
+==1113704== 
+==1113704== 
+==1113704== 6 errors in context 4 of 4:
+==1113704== Invalid read of size 8
+==1113704==    at 0x109865: print_and_free_list (grind.c:71)
+==1113704==    by 0x1097F9: print_grinder (grind.c:58)
+==1113704==    by 0x1093AA: main (main.c:33)
+==1113704==  Address 0x4a7b2b0 is 16 bytes inside a block of size 24 free'd
+==1113704==    at 0x483FB5B: free (vg_replace_malloc.c:989)
+==1113704==    by 0x109918: free_grind_elem (grind.c:84)
+==1113704==    by 0x109756: grind (grind.c:39)
+==1113704==    by 0x10938B: main (main.c:29)
+==1113704==  Block was alloc'd at
+==1113704==    at 0x483C815: malloc (vg_replace_malloc.c:446)
+==1113704==    by 0x109664: grind (grind.c:22)
+==1113704==    by 0x10938B: main (main.c:29)
+==1113704== 
+==1113704== ERROR SUMMARY: 24 errors from 4 contexts (suppressed: 0 from 0)
